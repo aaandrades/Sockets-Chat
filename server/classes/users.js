@@ -3,8 +3,8 @@ class Users {
     this.people = [];
   }
 
-  addPerson = (id, name) => {
-    let person = { id, name };
+  addPerson = (id, name, chat) => {
+    let person = { id, name, chat };
     this.people.push(person);
     return this.people;
   };
@@ -17,9 +17,8 @@ class Users {
   getAllPeople = () => this.people;
 
   getPeopleByRoom = (room) => {
-    console.log(".....");
-    console.log("pass");
-    console.log(".....");
+    let peopleInChat = this.people.filter((person)=>person.chat === room);
+    return peopleInChat;
   };
 
   deletePersonById = (id) => {
