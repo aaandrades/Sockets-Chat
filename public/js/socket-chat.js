@@ -1,29 +1,45 @@
-var socket = io();
 
-const params = new URLSearchParams(window.location.search);
+
+var params = new URLSearchParams(window.location.search);
 
 if (!params.has("name") || !params.has("chat")) {
   window.location = "index.html";
-  throw new Error("The name is necessary");
+  throw new Error("The name and chat are mandatories");
 }
 
-const user = { name: params.get("name"), chat: params.get("chat") };
+var usuario = {
+  name: params.get("name"),
+  chat: params.get("chat"),
+};
 
 socket.on("connect", function () {
-  console.log("Connected to server");
-  socket.emit("enterChat", user, (response) => {
-    console.log("Usuarios conectados: ", response);
+  console.log("Conectado al servidor");
+
+  socket.emit("enterChat", usuario, function (resp) {
+    renderUsers(resp);
   });
 });
 
-socket.on("createMessage", (response) => {
-  console.log("System: ", response);
+// escuchar
+socket.on("disconnect", function () {
+  console.log("Perdimos conexión con el servidor");
 });
 
-socket.on("peopleList", (response) => {
-  console.log("Conectados: ", response);
+// Escuchar información
+socket.on("createMessage", function (mensaje) {
+//   console.log("Servidor:", mensaje);
+  renderMessages(mensaje);
+  scrollBottom();
 });
 
-socket.on("privateMessage", (response) => {
-  console.log("Private message: ", response);
+// Escuchar cambios de usuarios
+// cuando un usuario entra o sale del chat
+socket.on("peopleList", function (personas) {
+  console.log(personas);
+  renderUsers(personas);
+});
+
+// Mensajes privados
+socket.on("privateMessage", function (mensaje) {
+  console.log("Mensaje Privado:", mensaje);
 });
