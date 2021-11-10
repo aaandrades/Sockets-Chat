@@ -6,125 +6,78 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Chat</title>
 
+    <link href="css/pages/chat-app-page.css" rel="stylesheet" />
+    <link href="css/chat.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-
-    <!-- Page CSS -->
-    <link href="css/pages/chat-app-page.css" rel="stylesheet" />
-    <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet" />
-    <link href="css/chat.css" rel="stylesheet" />
-    <link href="css/animate.css" rel="stylesheet" />
-
-    <!-- You can change the theme colors from here -->
-    <link href="css/colors/default-dark.css" id="theme" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/animatecss/3.5.2/animate.min.css"
+      integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+      crossorigin="anonymous"
+    />
   </head>
 
-  <body class="fix-header single-column card-no-border fix-sidebar">
-    <!-- ============================================================== -->
-    <!-- Main wrapper -->
-    <!-- ============================================================== -->
-    <div id="main-wrapper">
-      <!-- ============================================================== -->
-      <!-- Page wrapper  -->
-      <!-- ============================================================== -->
-      <div class="page-wrapper">
-        <!-- ============================================================== -->
-        <!-- Container fluid  -->
-        <!-- ============================================================== -->
-        <div class="container-fluid">
-          <!-- ============================================================== -->
-          <!-- Start Page Content -->
-          <!-- ============================================================== -->
-          <div class="row animated fadeIn">
-            <div class="col-12">
-              <div class="card m-b-0">
-                <!-- .chat-row -->
-                <div class="chat-main-box">
-                  <!-- .chat-left-panel -->
-                  <div class="chat-left-aside">
-                    <div class="open-panel"><i class="ti-angle-right"></i></div>
-                    <div class="chat-left-inner">
-                      <div class="form-material">
+  <body class="chat-body">
+    <div class="main-wrapper">
+      <div class="container-fluid animated fadeIn">
+        <div class="main-wrapper">
+          <div class="card m-b-0">
+            <div class="chat-main-box">
+
+
+              <div class="chat-left-aside">
+                <div class="open-panel"><i class="ti-angle-right"></i></div>
+                <div class="chat-left-inner">
+                  <ul class="style-none" id="divUsuarios"></ul>
+                </div>
+              </div>
+
+              <div class="chat-right-aside">
+                <div class="chat-main-header">
+                  <div class="p-20 b-b">
+                    <h4 class="box-title" id="room-title">Chat Room</h4>
+                  </div>
+                </div>
+
+                <div class="chat-rbox">
+                  <ul class="chat-list p-20" id="divChatbox"></ul>
+                </div>
+                <div class="card-body b-t">
+                  <form id="formSend">
+                    <div class="row">
+                      <div class="col-8">
                         <input
-                          class="form-control p-20"
-                          type="text"
-                          placeholder="Buscar Contacto"
+                          id="txtMessage"
+                          placeholder="Escribe tu mensaje aquí"
+                          class="form-control b-0"
+                          autocomplete="off"
                         />
                       </div>
-                      <ul class="chatonline style-none" id="divUsuarios">
-                      </ul>
-                    </div>
-                  </div>
-                  <!-- .chat-left-panel -->
-                  <!-- .chat-right-panel -->
-                  <div class="chat-right-aside">
-                    <div class="chat-main-header">
-                      <div class="p-20 b-b">
-                        <h3 class="box-title" id="room-title">Chat Room</h3>
+                      <div class="col-4 text-right">
+                        <span
+                          type="submit"
+                          class="btn btn-info btn-circle btn-lg"
+                        >
+                          <i class="fa fa-paper-plane-o"> </i>
+                        </span>
                       </div>
                     </div>
-
-                    <div class="chat-rbox">
-                      <ul class="chat-list p-20" id="divChatbox">
-                      </ul>
-                    </div>
-                    <div class="card-body b-t">
-                      
-                      <form id="formSend">
-                        <div class="row">
-                          <div class="col-8">
-                            <input
-                            id="txtMessage"
-                              placeholder="Escribe tu mensaje aquí"
-                              class="form-control b-0"
-                            />
-                          </div>
-                          <div class="col-4 text-right">
-                            <button
-                              type="submit"
-                              class="btn btn-info btn-circle btn-lg"
-                            >
-                              <i class="fa fa-paper-plane-o"> </i>
-                            </button>
-                          </div>
-                        </div>
-                      </form>  
-
-                    </div>
-                  </div>
-                  <!-- .chat-right-panel -->
+                  </form>
                 </div>
-                <!-- /.chat-row -->
               </div>
+
+
+
             </div>
           </div>
-          <!-- ============================================================== -->
-          <!-- End PAge Content -->
-          <!-- ============================================================== -->
         </div>
-        <!-- ============================================================== -->
-        <!-- End Container fluid  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- footer -->
-        <!-- ============================================================== -->
-        <footer class="footer">Socket Chat - Andres Andrade</footer>
-        <!-- ============================================================== -->
-        <!-- End footer -->
-        <!-- ============================================================== -->
       </div>
-      <!-- ============================================================== -->
-      <!-- End Page wrapper  -->
-      <!-- ============================================================== -->
     </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
 
     <script src="js/libs/jquery.min.js"></script>
     <script src="socket.io/socket.io.js"></script>

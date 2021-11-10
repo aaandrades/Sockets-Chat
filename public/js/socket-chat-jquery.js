@@ -14,33 +14,28 @@ document.getElementById('room-title').innerHTML = "Chat Room: " + chat
 
 // Functions to render users
 const renderUsers = (users) => {
-  // title.val("Chat Room:" + chat);
   let html = "";
 
   html += "<li>";
-  html += `<a href="javascript:void(0)" class="active">Chat de <span> ${params.get(
-    "chat"
-  )}</span></a>`;
+  html += `<div class="active">Welcome, <span> ${params.get("chat")}</span></div>`;
+  html += `<p class="connected">Users</p>`;
   html += "</li>";
 
   for (let i = 0; i < users.length; i++) {
-    html += "<li>";
-    html += `<a data-id="${
-      users[i].id
-    }"href="javascript:void(0)"><img src="assets/images/users/${
-      i + 1
-    }.jpg" alt="user-img" class="img-circle"/>`;
-    html += `<span>${users[i].name}<small class="text-success">online</small></span></a>`;
+    html += "<li class='li-container'>";
+      html += `<div data-id="${users[i].id}" class="user-row"><img src="assets/images/users/${i + 1}.jpg" alt="user-img" class="img-circle"/>`;
+      html += `<div class="chat-description"><span>${users[i].name}</span>`;
+      html += `<span class="text-success">online</span></div></div>`;
     html += "</li>";
   }
   divUsuarios.html(html);
 };
 
 // Listeners
-divUsuarios.on("click", "a", function () {
+divUsuarios.on("click", "div", function () {
   let id = $(this).data("id");
   if (id) {
-    console.log(id);
+    console.log("If you need the ID: ", id);
   }
 });
 

@@ -1,9 +1,94 @@
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .chat-list {
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-    height: 600px !important;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  height: 600px !important;
 }
 
 textarea {
+  width: 100%;
+}
+
+.active {
+  width: 100%;
+  padding: 25px;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.chat-body {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #0066cf;
+}
+
+.li-container {
+  width: 100%;
+  padding: 5px 20px;
+}
+
+.connected {
+  color: #0066cf;
+  font-weight: 100;
+  padding-left: 25px;
+}
+
+.active-users {
+  width: 5px;
+  height: 5px;
+  padding: 5px;
+  background-color: green;
+}
+.user-row {
+  width: 100%;
+  padding-bottom: 10px;
+  display: flex;
+  border-bottom: 1px solid rgba(120, 130, 140, 0.13);
+}
+
+.main-wrapper {
+  width: 100%;
+}
+
+.chat-description {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.box-title {
+  padding: 20px;
+}
+
+.img-circle {
+  width: 60px;
+  border-radius: 100%;
+  margin-right: 15px;
+}
+
+@media (max-width: 600px) {
+  .main-wrapper {
     width: 100%;
+    margin: 0px;
+  }
+  .img-circle {
+    width: 40px;
+  }
 }

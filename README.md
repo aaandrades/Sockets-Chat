@@ -25,7 +25,7 @@ The Tickets management is a real-time tickets delivery system focus on different
 - Css
 
 ### :hammer: Demostration
-Its a simple app, you can open here ```https://sockets-application.herokuapp.com/```
+Its a simple app, you can open here ```https://sockets-room-chat.herokuapp.com/index.html```
 
 ### :bulb: Run the App
 Clone repo and type ```npm install``` and then ```nodemon server/server``` or ```npm run start```
