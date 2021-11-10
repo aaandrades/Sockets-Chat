@@ -9,13 +9,12 @@ The Tickets management is a real-time tickets delivery system focus on different
 
 ### :sparkles: Features
 - Update in real time.
-- Save daily data (Similar to real tickets).
-- Makes sounds when the current ticket change.
+- Connection with different users.
 - Responsive design.
 ### :alembic: Core Concepts
 
 - Socket.io
-- Pipelines
+- Real time
 - Modal-pattern
 ### :construction: Made with
 - Vanilla JS
