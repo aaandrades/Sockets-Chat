@@ -71,23 +71,23 @@ const renderMessages = (message, own = false) => {
   
   if (own) {
     html += "<li class='reverse animated fadeIn'>";
-    html += '<div class="chat-content">';
-    html += `<h5>${message.user}</h5>`;
-    html += `<div class="box bg-light-inverse">${message.message}</div>`;
-    html += "</div>";
-    html +='<div class="chat-img"><img src="assets/images/users/5.jpg" alt="user" /></div>';
-    html += `<div class="chat-time">${time}</div>`;
+      html += '<div class="chat-content">';
+        html += `<span class="user-name">${message.user}</span>`;
+        html += `<div class="chat-text"><span>${message.message}</span><span class="chat-time">${time}</span></div>`;
+        html += ``;
+      html += "</div>";
+      html += '<img src="assets/images/users/5.jpg" alt="user" class="img-circle chat-modifier"/>';
     html += "</li> ";
   } else {
-    html += "<li class='animated fadeIn'>";
-    if(message.user !== 'Admin'){
-      html += '<div class="chat-img"> <img src="assets/images/users/1.jpg" alt="user" /></div>';
+    html += "<li class='complete animated fadeIn'>";
+    if(message.user !== 'Admin') {
+      html += '<div class="chat-img"> <img src="assets/images/users/1.jpg" alt="user" class="img-circle chat-modifier"/></div>';
     }
-    html += '<div class="chat-content">';
-    html += `<h5>${message.user}</h5>`;
-    html += `<div class="box bg-light-${adminClass}"> ${message.message} </div>`;
-    html += "</div>";
-    html += `<div class="chat-time">${time}</div>`;
+      html += '<div class="chat-left">';
+        html += `<span class="user-name">${message.user}</span>`;
+        html += `<div class="chat-complete color-${adminClass}"> ${message.message} <span class="chat-time">${time}</span></div>`;
+        html += ``;
+      html += "</div>";
     html += "</li>";
   }
 

@@ -24,6 +24,10 @@ textarea {
   width: 100%;
 }
 
+li {
+  list-style-type: none;
+}
+
 .active {
   width: 100%;
   padding: 25px;
@@ -46,7 +50,6 @@ textarea {
 
 .connected {
   color: #0066cf;
-  font-weight: 100;
   padding-left: 25px;
 }
 
@@ -79,8 +82,67 @@ textarea {
 
 .img-circle {
   width: 60px;
+  height: 60px;
   border-radius: 100%;
   margin-right: 15px;
+}
+
+.chat-modifier {
+  width: 45px;
+  height: 45px;
+}
+
+.chat-content {
+  text-align: end;
+  margin-bottom: 30px;
+  margin-right: 15px;
+}
+
+.chat-left {
+  margin-bottom: 30px;
+  margin-right: 15px;
+}
+
+.chat-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: lightblue;
+  padding: 5px 15px 5px 30px;
+}
+
+.chat-complete {
+  display: flex;
+  border-radius: 6px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5px 30px 5px 15px;
+  background-color: lightgreen;
+}
+.color-danger {
+  background-color: white;
+}
+.user-name {
+  color: #c4c4c4;
+}
+.chat-time {
+  font-size: 0.7rem;
+  color: gray;
+}
+
+.reverse {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.complete {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.input-text {
+  width: 100%;
+  display: flex;
 }
 
 @media (max-width: 600px) {
@@ -90,5 +152,6 @@ textarea {
   }
   .img-circle {
     width: 40px;
+    height: 40px;
   }
 }
