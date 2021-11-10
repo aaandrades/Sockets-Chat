@@ -1,82 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Chat</title>
 
-    <link href="css/pages/chat-app-page.css" rel="stylesheet" />
-    <link href="css/chat.css" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/animatecss/3.5.2/animate.min.css"
-      integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
-      crossorigin="anonymous"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Chat</title>
 
-  <body class="chat-body">
-    <div class="main-wrapper">
-      <div class="container-fluid animated fadeIn">
-        <div class="main-wrapper">
-          <div class="card m-b-0">
-            <div class="chat-main-box">
+  <link href="css/pages/chat-app-page.css" rel="stylesheet" />
+  <link href="css/chat.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/animatecss/3.5.2/animate.min.css"
+    integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous" />
+</head>
 
+<body class="chat-body">
+  <div class="main-wrapper">
+    <div class="container-fluid animated fadeIn">
+      <div class="main-wrapper">
 
-              <div class="chat-left-aside">
-                <div class="open-panel"><i class="ti-angle-right"></i></div>
-                <div class="chat-left-inner">
-                  <ul class="style-none" id="divUsuarios"></ul>
-                </div>
-              </div>
+        <button class="open-panel" id="arrow" >
+          <i class="large material-icons" id="chevron">chevron_right</i>
+        </button>
 
-              <div class="chat-right-aside">
-                <div class="chat-main-header">
-                  <div class="p-20 b-b">
-                    <h4 class="box-title" id="room-title">Chat Room</h4>
-                  </div>
-                </div>
+        <div class="card m-b-0">
+          <div class="chat-main-box wrapper">
 
-                <div class="chat-rbox">
-                  <ul class="chat-list p-20" id="divChatbox"></ul>
-                </div>
-                <div class="card-body b-t">
-                  <form id="formSend">
-                    <div class="input-text">
-                          <input
-                            id="txtMessage"
-                            placeholder="Escribe tu mensaje aquí"
-                            class="form-control b-0"
-                            autocomplete="off"
-                          />
-                          <button
-                            type="submit"
-                            class="btn btn-info btn-circle"
-                          >
-                            Send
-                          </button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
+            <div class="chat-left-aside hide-panel" id="panel">
+              <div class="open-panel"><i class="ti-angle-right"></i></div>
+              <div class="chat-left-inner">
+                <ul class="style-none" id="divUsuarios"></ul>
               </div>
             </div>
+
+            <div class="chat-right-aside full-chat">
+              <div class="chat-main-header">
+                <div class="p-20 b-b">
+                  <h4 class="box-title" id="room-title">Chat Room</h4>
+                </div>
+              </div>
+
+              <div class="chat-rbox">
+                <ul class="chat-list p-20" id="divChatbox"></ul>
+              </div>
+              <div class="card-body b-t">
+                <form id="formSend">
+                  <div class="input-text">
+                    <input id="txtMessage" placeholder="Type your message here" class="form-control b-0"
+                      autocomplete="off" />
+                    <button type="submit" class="btn btn-info btn-circle">
+                      Send
+                    </button>
+                  </div>
+              </div>
+              </form>
+            </div>
+
+
           </div>
         </div>
       </div>
     </div>
+  </div>
+  </div>
 
-    <script src="js/libs/jquery.min.js"></script>
-    <script src="socket.io/socket.io.js"></script>
+  <script src="js/libs/jquery.min.js"></script>
+  <script src="socket.io/socket.io.js"></script>
 
-    <script src="js/socket-chat-jquery.js"></script>
-    <script src="js/socket-chat.js"></script>
-  </body>
+  <script src="js/socket-chat-jquery.js"></script>
+  <script src="js/socket-chat.js"></script>
+</body>
+
 </html>

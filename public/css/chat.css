@@ -145,7 +145,57 @@ li {
   display: flex;
 }
 
+.wrapper {
+  display: flex;
+}
+
+.open-panel {
+  cursor: pointer;
+  position: absolute;
+  left: 0px;
+  top: 30%;
+  z-index: 100;
+  background-color: #fff;
+
+  -webkit-box-shadow: 1px 0 3px rgb(0 0 0 / 20%);
+  box-shadow: 1px 0 3px rgb(0 0 0 / 20%);
+  border-radius: 0 100px 100px 0;
+
+  line-height: 1;
+  font-weight: bold;
+  padding: 20px 10px 20px 7px;
+  outline: none;
+  border: none;
+}
+
+.open-panel:focus {
+  outline: none;
+}
+
+#arrow {
+  display: none;
+}
+
+.overflow-panel {
+  position: absolute !important;
+  background: #ebebeb;
+  width: 70%;
+  height: 100%;
+}
+
 @media (max-width: 600px) {
+  .chat-body {
+    /* display: flex;
+    height: 100vh; */
+    height: auto !important;
+    align-items: flex-start;
+    margin-top: 30px;
+    /* justify-content: center; */
+  }
+
+  #arrow {
+    display: block;
+  }
   .main-wrapper {
     width: 100%;
     margin: 0px;
@@ -153,5 +203,11 @@ li {
   .img-circle {
     width: 40px;
     height: 40px;
+  }
+  .hide-panel {
+    display: none;
+  }
+  .full-chat {
+    width: 100% !important;
   }
 }

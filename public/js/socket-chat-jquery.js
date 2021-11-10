@@ -6,11 +6,14 @@ const divUsuarios = $("#divUsuarios");
 const formSend = $("#formSend");
 const txtMessage = $("#txtMessage");
 const divChatbox = $("#divChatbox");
+const showPanel = document.querySelector('#arrow');
 
 const user = params.get("name");
 const chat = params.get("chat");
 
-document.getElementById('room-title').innerHTML = "Chat Room: " + chat
+let showingPanel = true;
+
+document.getElementById('room-title').innerHTML = "Chat Room: " + chat;
 
 // Functions to render users
 const renderUsers = (users) => {
@@ -97,16 +100,30 @@ const renderMessages = (message, own = false) => {
 const scrollBottom = () => {
 
   // selectors
-  var newMessage = divChatbox.children('li:last-child');
+  const newMessage = divChatbox.children('li:last-child');
 
   // heights
-  var clientHeight = divChatbox.prop('clientHeight');
-  var scrollTop = divChatbox.prop('scrollTop');
-  var scrollHeight = divChatbox.prop('scrollHeight');
-  var newMessageHeight = newMessage.innerHeight();
-  var lastMessageHeight = newMessage.prev().innerHeight() || 0;
+  const clientHeight = divChatbox.prop('clientHeight');
+  const scrollTop = divChatbox.prop('scrollTop');
+  const scrollHeight = divChatbox.prop('scrollHeight');
+  const newMessageHeight = newMessage.innerHeight();
+  const lastMessageHeight = newMessage.prev().innerHeight() || 0;
 
   if (clientHeight + scrollTop + newMessageHeight + lastMessageHeight >= scrollHeight) {
       divChatbox.scrollTop(scrollHeight);
   }
 }
+
+showPanel.addEventListener('click', ()=> {
+  const panel = document.getElementById('panel');
+  if(showingPanel){
+    panel.classList.remove("hide-panel");
+    panel.classList.add("overflow-panel");
+    document.getElementById("chevron").innerHTML = 'chevron_left'
+    showingPanel = false;
+  } else {
+    panel.classList.add("hide-panel");
+    document.getElementById("chevron").innerHTML = 'chevron_right'
+    showingPanel = true;
+  }
+});
