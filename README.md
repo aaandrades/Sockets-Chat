@@ -5,7 +5,7 @@
 ![Build](https://img.shields.io/badge/-Working-brightgreen)
 
 ### :memo: Description
-The Tickets management is a real-time tickets delivery system focus on different scenarios such as Hospital, Law Firm, Odontology, Office of Driving license, Etc.
+Socket-chat it's an application where you can enter and create chat rooms for you and your friends, no tracking, no registry, totally anonymous. what are you waiting for?
 
 ### :sparkles: Features
 - Update in real time.
@@ -20,6 +20,7 @@ The Tickets management is a real-time tickets delivery system focus on different
 - Vanilla JS
 - Jquery
 - Socket.io
+- animate.css
 - Html
 - Css
 
