@@ -1,5 +1,3 @@
-
-
 var params = new URLSearchParams(window.location.search);
 
 if (!params.has("name") || !params.has("chat")) {
@@ -7,39 +5,32 @@ if (!params.has("name") || !params.has("chat")) {
   throw new Error("The name and chat are mandatories");
 }
 
-var usuario = {
+const usuario = {
   name: params.get("name"),
   chat: params.get("chat"),
 };
 
 socket.on("connect", function () {
-  console.log("Conectado al servidor");
+  console.log("Connected to server");
 
   socket.emit("enterChat", usuario, function (resp) {
     renderUsers(resp);
   });
 });
 
-// escuchar
 socket.on("disconnect", function () {
-  console.log("Perdimos conexión con el servidor");
+  console.log("We've lost the connection");
 });
 
-// Escuchar información
 socket.on("createMessage", function (mensaje) {
-//   console.log("Servidor:", mensaje);
   renderMessages(mensaje);
   scrollBottom();
 });
 
-// Escuchar cambios de usuarios
-// cuando un usuario entra o sale del chat
 socket.on("peopleList", function (personas) {
-  console.log(personas);
   renderUsers(personas);
 });
 
-// Mensajes privados
 socket.on("privateMessage", function (mensaje) {
-  console.log("Mensaje Privado:", mensaje);
+  console.log("Private message:", mensaje);
 });

@@ -14,10 +14,14 @@
   background: #555;
 }
 
+.container-fluid {
+  max-width: 1000px;
+}
+
 .chat-list {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
-  height: 600px !important;
+  height: 50vh !important;
 }
 
 textarea {
