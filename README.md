@@ -26,6 +26,7 @@ Socket-chat it's an application where you can enter and create chat rooms for yo
 
 ### :hammer: Demostration
 Its a simple app, you can open here ```https://sockets-room-chat.herokuapp.com/index.html```
+Or you can watch the video https://youtu.be/Y4DOhaW6wfY
 
 ### :bulb: Run the App
 Clone repo and type ```npm install``` and then ```nodemon server/server``` or ```npm run start```
