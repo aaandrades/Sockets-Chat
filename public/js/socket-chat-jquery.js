@@ -20,7 +20,7 @@ const renderUsers = (users) => {
   let html = "";
 
   html += "<li>";
-  html += `<div class="active">Welcome, <span> ${params.get("chat")}</span></div>`;
+  html += `<div class="active">Welcome, <span> ${params.get("name")}</span></div>`;
   html += `<p class="connected">Users</p>`;
   html += "</li>";
 
