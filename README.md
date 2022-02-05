@@ -7,6 +7,8 @@
 ### :memo: Description
 Socket-chat it's an application where you can enter and create chat rooms for you and your friends, no tracking, no registry, totally anonymous. what are you waiting for?
 
+<img src="server/documentation/main.png"  alt="Login screen" width="600" height="400" style=border-radius:6px>
+
 ### :sparkles: Features
 - Update in real time.
 - Connection with different users.
@@ -25,8 +27,11 @@ Socket-chat it's an application where you can enter and create chat rooms for yo
 - Css
 
 ### :hammer: Demostration
-Its a simple app, you can open here ```https://sockets-room-chat.herokuapp.com/index.html```
-Or you can watch the video https://youtu.be/Y4DOhaW6wfY
+Its a simple app, you can open here https://sockets-room-chat.herokuapp.com/index.html
+Or you can watch the video https://youtu.be/Y4DOhaW6wfY.
+
+<img src="server/documentation/login.png"  alt="Login screen" width="600" height="400" style=border-radius:6px>
+
 
 ### :bulb: Run the App
 Clone repo and type ```npm install``` and then ```nodemon server/server``` or ```npm run start```
